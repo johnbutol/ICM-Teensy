@@ -41,11 +41,21 @@ while(!Serial);
 Serial.println(ICM_VERSION);
 Serial.println(__DATE__);
 Serial.println(__TIME__);
+Serial.print("Arduino Ide Version ");
+Serial.print(ARDUINO, DEC);
+Serial.println("");
+Serial.print("Teensyduino Version ");
+Serial.print(TEENSYDUINO, DEC);
+Serial.println("");
+Serial.print("Cpu frequency ");
+Serial.print(F_CPU, DEC);
+Serial.println("");
 }
 
 #define DATABUFFER_SIZE_2048  (2048)
 #define DATABUFFER_SIZE_2096  (2096)
-extern volatile unsigned char newDataIsr[DATABUFFER_SIZE_2096];
+#define DATABUFFER_SIZE DATABUFFER_SIZE_2048
+extern volatile unsigned char newDataIsr[DATABUFFER_SIZE];
 extern volatile unsigned char dataReadyIsr;
 extern const unsigned char protocolFound;
 #ifdef PRINT_DEBUG

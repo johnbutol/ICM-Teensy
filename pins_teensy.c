@@ -321,7 +321,7 @@ PORT_ISR_FUNCTION_CLZ(B)
 #define DATABUFFER_SIZE DATABUFFER_SIZE_2048
 #endif
 
-volatile unsigned char newDataIsr[DATABUFFER_SIZE_2096];
+volatile unsigned char newDataIsr[DATABUFFER_SIZE];
 volatile unsigned char dataReadyIsr = 0;
 volatile unsigned int toggle = 0;
 volatile unsigned int startFound = 0;
@@ -335,7 +335,7 @@ FASTRUN static void port_C_isr(void)
 {
     if(!dataReadyIsr)
     {
-        *(newDataIsr + toggle++) = GPIOD_PDIR & 0xFF;
+        *(newDataIsr + toggle++) = GPIOD_PDIR;// & 0xFF;
     }
 
     uint32_t isfr = PORTC_ISFR;
