@@ -1,6 +1,6 @@
 //#define PRINT_DEBUG
 
-#define ICM_VERSION "ICM-Teensy v1.0 2004"
+#define ICM_VERSION "ICM-Teensy v1.2 2004"
 
 #ifdef PRINT_DEBUG
 #include "referenceBmp.h"
