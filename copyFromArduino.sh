@@ -1,1 +1,1 @@
-cp /usr/share/arduino-1.8.5/hardware/teensy/avr/cores/teensy3/pins_teensy.c .
+cp /usr/share/arduino-1.8.8/hardware/teensy/avr/cores/teensy3/pins_teensy.c .
